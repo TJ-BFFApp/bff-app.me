@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — BFF: Be Freakin' Functional</title>
+  <meta name="description" content="Privacy Policy for BFF — Be Freakin' Functional. Learn how we collect, use, and protect your data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0E0E55;
+      --gold: #C9A84C;
+      --gold-light: #F0D060;
+      --text: #1d1d1f;
+      --text-secondary: #6e6e73;
+      --text-tertiary: #aeaeb2;
+      --bg: #ffffff;
+      --bg-surface: #f5f5f7;
+      --border: rgba(0,0,0,0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg); color: var(--text);
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--navy); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 64px;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 0.5px solid var(--border);
+    }
+    .nav-logo { text-decoration: none; line-height: 1; }
+    .nav-logo-name { font-family: 'DM Serif Display', serif; font-size: 20px; letter-spacing: -0.3px; color: var(--navy); display: block; }
+    .nav-logo-name span { color: var(--gold); }
+    .nav-logo-tagline { font-size: 10px; font-weight: 400; letter-spacing: 0.04em; color: var(--text-tertiary); display: block; margin-top: 2px; }
+    .nav-back {
+      font-size: 14px; color: var(--text-secondary); text-decoration: none;
+      display: flex; align-items: center; gap: 6px; transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--text); text-decoration: none; }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 120px 24px 64px;
+      background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-header::before {
+      content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,168,76,0.1); border: 0.5px solid rgba(201,168,76,0.3);
+      border-radius: 100px; padding: 6px 14px; font-size: 13px; font-weight: 500;
+      color: #8a6a1a; margin-bottom: 24px;
+    }
+    .page-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+    .page-header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 5vw, 60px); line-height: 1.1;
+      letter-spacing: -0.03em; color: var(--navy); margin-bottom: 16px;
+    }
+    .page-header p {
+      font-size: 17px; color: var(--text-secondary); font-weight: 300;
+      max-width: 480px; margin: 0 auto;
+    }
+    .updated-date {
+      display: inline-block; margin-top: 20px;
+      font-size: 13px; color: var(--text-tertiary);
+    }
+
+    /* CONTENT */
+    .content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 64px 24px 100px;
+    }
+
+    .toc {
+      background: var(--bg-surface);
+      border-radius: 20px;
+      padding: 32px 36px;
+      margin-bottom: 56px;
+      border: 0.5px solid var(--border);
+    }
+    .toc-title {
+      font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+    }
+    .toc ol {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 8px;
+      counter-reset: toc-counter;
+    }
+    .toc ol li { counter-increment: toc-counter; display: flex; align-items: baseline; gap: 10px; }
+    .toc ol li::before {
+      content: counter(toc-counter, decimal-leading-zero);
+      font-size: 11px; font-weight: 600; color: var(--gold);
+      min-width: 20px; letter-spacing: 0.04em;
+    }
+    .toc ol li a {
+      font-size: 15px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s;
+    }
+    .toc ol li a:hover { color: var(--navy); text-decoration: none; }
+
+    .policy-section {
+      margin-bottom: 52px;
+      padding-bottom: 52px;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .policy-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .policy-section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px; letter-spacing: -0.02em;
+      color: var(--navy); margin-bottom: 20px; line-height: 1.2;
+    }
+    .section-number {
+      font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--gold);
+      display: block; margin-bottom: 8px;
+    }
+
+    .policy-section p {
+      font-size: 16px; color: var(--text-secondary); line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .policy-section p:last-child { margin-bottom: 0; }
+
+    .policy-section h3 {
+      font-size: 17px; font-weight: 600; color: var(--text);
+      margin: 28px 0 10px;
+    }
+
+    .policy-section ul, .policy-section ol {
+      margin: 12px 0 16px 0;
+      padding-left: 0;
+      list-style: none;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .policy-section ul li, .policy-section ol li {
+      font-size: 16px; color: var(--text-secondary); line-height: 1.65;
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .policy-section ul li::before {
+      content: '';
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0; margin-top: 9px;
+    }
+    .policy-section ol { counter-reset: ol-counter; }
+    .policy-section ol li { counter-increment: ol-counter; }
+    .policy-section ol li::before {
+      content: counter(ol-counter) '.';
+      font-size: 13px; font-weight: 600; color: var(--gold);
+      flex-shrink: 0; min-width: 20px; margin-top: 2px;
+    }
+
+    .highlight-box {
+      background: rgba(201,168,76,0.07);
+      border: 0.5px solid rgba(201,168,76,0.25);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+    .highlight-box p {
+      font-size: 15px; color: var(--text); margin: 0; line-height: 1.6;
+    }
+
+    .contact-card {
+      background: var(--navy);
+      border-radius: 20px;
+      padding: 36px;
+      margin-top: 20px;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .contact-card p { color: rgba(255,255,255,0.65); margin: 0; font-size: 15px; }
+    .contact-card a { color: var(--gold); font-weight: 500; }
+    .contact-card a:hover { text-decoration: underline; }
+    .contact-card-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px; color: #fff; margin-bottom: 8px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      border-top: 0.5px solid rgba(255,255,255,0.06);
+      padding: 40px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-logo { text-decoration: none; }
+    .footer-logo-name { font-family: 'DM Serif Display', serif; font-size: 18px; color: #fff; display: block; }
+    .footer-logo-name span { color: var(--gold); }
+    .footer-logo-tagline { font-size: 10px; color: rgba(255,255,255,0.25); letter-spacing: 0.04em; margin-top: 2px; display: block; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); text-decoration: none; }
+    .footer-copy { font-size: 13px; color: rgba(255,255,255,0.18); }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      footer { padding: 32px 20px; flex-direction: column; align-items: flex-start; }
+      .toc { padding: 24px; }
+      .content { padding: 48px 20px 80px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <span class="nav-logo-name">BFF<span>.</span></span>
+    <span class="nav-logo-tagline">Be Freakin' Functional</span>
+  </a>
+  <a href="/" class="nav-back">← Back to home</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-eyebrow">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p>We take your privacy seriously. Here's exactly what we collect, why we collect it, and how we protect it.</p>
+  <span class="updated-date">Last updated: April 23, 2026</span>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <p class="toc-title">Contents</p>
+    <ol>
+      <li><a href="#information-we-collect">Information We Collect</a></li>
+      <li><a href="#how-we-use">How We Use Your Information</a></li>
+      <li><a href="#ai-processing">AI & Data Processing</a></li>
+      <li><a href="#data-sharing">Data Sharing & Third Parties</a></li>
+      <li><a href="#health-data">Health & Fitness Data</a></li>
+      <li><a href="#data-retention">Data Retention</a></li>
+      <li><a href="#your-rights">Your Rights & Choices</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </div>
+
+  <div class="highlight-box">
+    <p>BFF — Be Freakin' Functional ("BFF", "we", "us", or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application and website. Please read this policy carefully. By using BFF, you agree to the practices described here.</p>
+  </div>
+
+  <!-- 1. INFORMATION WE COLLECT -->
+  <div class="policy-section" id="information-we-collect">
+    <span class="section-number">01</span>
+    <h2>Information We Collect</h2>
+
+    <h3>Information you provide directly</h3>
+    <ul>
+      <li>Account information such as your name and email address when you create an account</li>
+      <li>Health and fitness goals you set within the app (e.g. target weight, dietary preferences, activity levels)</li>
+      <li>Food and meal logs you enter manually</li>
+      <li>Messages and conversations you have with your BFF AI persona</li>
+      <li>Progress photos or notes you choose to add</li>
+      <li>Payment information processed securely through Apple's App Store and RevenueCat (we never see or store your card details)</li>
+    </ul>
+
+    <h3>Information collected automatically</h3>
+    <ul>
+      <li>Device information including device type, operating system version, and unique device identifiers</li>
+      <li>App usage data such as features used, session duration, and in-app actions</li>
+      <li>Crash reports and performance data to help us improve the app</li>
+      <li>General location data (country/region) derived from your IP address for analytics purposes</li>
+    </ul>
+
+    <h3>Information from third-party integrations</h3>
+    <ul>
+      <li>If you connect Apple Health, we may read activity, nutrition, and body measurement data you have authorized</li>
+    </ul>
+  </div>
+
+  <!-- 2. HOW WE USE -->
+  <div class="policy-section" id="how-we-use">
+    <span class="section-number">02</span>
+    <h2>How We Use Your Information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+      <li>Provide, operate, and personalize the BFF app experience</li>
+      <li>Power the AI accountability coach features and persona conversations</li>
+      <li>Track your progress toward your health and fitness goals</li>
+      <li>Send you in-app notifications and check-ins relevant to your goals</li>
+      <li>Process your subscription payments and manage your account</li>
+      <li>Analyze usage patterns to improve app features and fix issues</li>
+      <li>Respond to your support requests and inquiries</li>
+      <li>Comply with legal obligations</li>
+    </ul>
+    <p>We do not use your data to serve you advertisements. We do not sell your personal information to third parties. Ever.</p>
+  </div>
+
+  <!-- 3. AI PROCESSING -->
+  <div class="policy-section" id="ai-processing">
+    <span class="section-number">03</span>
+    <h2>AI & Data Processing</h2>
+    <p>BFF uses Anthropic's Claude AI to power the BFF persona conversations. When you chat with your BFF, your messages are sent to Anthropic's API for processing to generate responses.</p>
+    <h3>What this means for you</h3>
+    <ul>
+      <li>Your conversation messages are transmitted to Anthropic's servers to generate AI responses</li>
+      <li>We do not use your personal conversations to train AI models</li>
+      <li>Anthropic's data handling is governed by their own privacy policy, available at <a href="https://www.anthropic.com/privacy" target="_blank">anthropic.com/privacy</a></li>
+      <li>We only send the context needed for the AI to respond — we do not send unnecessary personal data</li>
+    </ul>
+    <div class="highlight-box">
+      <p>Your BFF conversations are private and personal. We treat them with the same care as any sensitive health information.</p>
+    </div>
+  </div>
+
+  <!-- 4. DATA SHARING -->
+  <div class="policy-section" id="data-sharing">
+    <span class="section-number">04</span>
+    <h2>Data Sharing & Third Parties</h2>
+    <p>We work with a limited number of trusted third-party service providers to operate BFF. These providers only receive the data necessary to perform their specific services:</p>
+
+    <h3>Service providers we use</h3>
+    <ul>
+      <li><strong>Anthropic</strong> — AI model processing for BFF chat conversations</li>
+      <li><strong>Supabase</strong> — Secure database hosting and backend infrastructure</li>
+      <li><strong>RevenueCat</strong> — Subscription and in-app purchase management</li>
+      <li><strong>Apple</strong> — App distribution, payment processing, and optional HealthKit integration</li>
+    </ul>
+
+    <p>We may also disclose your information if required by law, to protect the rights and safety of our users, or in connection with a business transfer such as a merger or acquisition (in which case you will be notified).</p>
+    <p>We do not sell, rent, or trade your personal information to any third party for marketing purposes.</p>
+  </div>
+
+  <!-- 5. HEALTH DATA -->
+  <div class="policy-section" id="health-data">
+    <span class="section-number">05</span>
+    <h2>Health & Fitness Data</h2>
+    <p>BFF handles health and fitness information, which we treat with the highest level of care.</p>
+    <ul>
+      <li>Health data you enter (meals, workouts, weight, goals) is stored securely and used only to power your BFF experience</li>
+      <li>If you connect Apple Health, we only access the data categories you explicitly authorize</li>
+      <li>Your health data is never shared with advertisers, data brokers, or other third parties for commercial purposes</li>
+      <li>Health data is encrypted both in transit and at rest</li>
+    </ul>
+    <div class="highlight-box">
+      <p>BFF is a wellness accountability tool, not a medical service. The app does not provide medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional for medical guidance.</p>
+    </div>
+  </div>
+
+  <!-- 6. DATA RETENTION -->
+  <div class="policy-section" id="data-retention">
+    <span class="section-number">06</span>
+    <h2>Data Retention</h2>
+    <p>We retain your personal data for as long as your account is active or as needed to provide you services. Specifically:</p>
+    <ul>
+      <li>Account and profile data is retained while your account is active</li>
+      <li>Health and progress data is retained to show you historical trends unless you delete it</li>
+      <li>Chat conversation history is retained to provide continuity in your BFF relationship</li>
+      <li>If you delete your account, we will delete your personal data within 30 days, except where retention is required by law</li>
+    </ul>
+    <p>You can request deletion of your data at any time by contacting us at the address below or using the Delete Account option in the app settings.</p>
+  </div>
+
+  <!-- 7. YOUR RIGHTS -->
+  <div class="policy-section" id="your-rights">
+    <span class="section-number">07</span>
+    <h2>Your Rights & Choices</h2>
+    <p>Depending on where you live, you may have the following rights regarding your personal data:</p>
+    <ul>
+      <li><strong>Access</strong> — Request a copy of the personal data we hold about you</li>
+      <li><strong>Correction</strong> — Request correction of inaccurate or incomplete data</li>
+      <li><strong>Deletion</strong> — Request deletion of your personal data</li>
+      <li><strong>Portability</strong> — Request your data in a portable, machine-readable format</li>
+      <li><strong>Opt-out of notifications</strong> — Manage push notification preferences in your device settings or within the app</li>
+      <li><strong>Apple Health</strong> — Revoke HealthKit permissions at any time through your iPhone Settings → Privacy → Health</li>
+    </ul>
+    <p>To exercise any of these rights, please contact us at <a href="mailto:privacy@bff-app.me">privacy@bff-app.me</a>. We will respond to all requests within 30 days.</p>
+  </div>
+
+  <!-- 8. CHILDREN -->
+  <div class="policy-section" id="children">
+    <span class="section-number">08</span>
+    <h2>Children's Privacy</h2>
+    <p>BFF is not intended for use by anyone under the age of 17. We do not knowingly collect personal information from children under 17. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately at <a href="mailto:privacy@bff-app.me">privacy@bff-app.me</a> and we will take steps to delete such information.</p>
+  </div>
+
+  <!-- 9. SECURITY -->
+  <div class="policy-section" id="security">
+    <span class="section-number">09</span>
+    <h2>Security</h2>
+    <p>We take the security of your data seriously and implement industry-standard measures to protect it:</p>
+    <ul>
+      <li>All data is encrypted in transit using TLS/HTTPS</li>
+      <li>Data at rest is encrypted using AES-256 encryption</li>
+      <li>We use Supabase's secure infrastructure with row-level security policies</li>
+      <li>Access to personal data is restricted to authorized personnel only</li>
+      <li>We regularly review and update our security practices</li>
+    </ul>
+    <p>While we take all reasonable steps to protect your data, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security but we commit to notifying you promptly in the event of any breach that affects your data.</p>
+  </div>
+
+  <!-- 10. CHANGES -->
+  <div class="policy-section" id="changes">
+    <span class="section-number">10</span>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal, operational, or regulatory reasons. When we make material changes, we will notify you by:</p>
+    <ul>
+      <li>Updating the "Last updated" date at the top of this page</li>
+      <li>Sending a push notification through the BFF app</li>
+      <li>Displaying a notice within the app on your next login</li>
+    </ul>
+    <p>Your continued use of BFF after any changes constitutes your acceptance of the updated Privacy Policy. We encourage you to review this page periodically.</p>
+  </div>
+
+  <!-- 11. CONTACT -->
+  <div class="policy-section" id="contact">
+    <span class="section-number">11</span>
+    <h2>Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please reach out to us.</p>
+    <div class="contact-card">
+      <p class="contact-card-title">Get in touch</p>
+      <p>Email: <a href="mailto:privacy@bff-app.me">privacy@bff-app.me</a></p>
+      <p>App: <a href="https://bff-app.me">bff-app.me</a></p>
+      <p style="margin-top: 12px; font-size: 13px; color: rgba(255,255,255,0.35);">BFF — Be Freakin' Functional<br/>We aim to respond to all privacy inquiries within 30 days.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="/" class="footer-logo">
+    <span class="footer-logo-name">BFF<span>.</span></span>
+    <span class="footer-logo-tagline">Be Freakin' Functional</span>
+  </a>
+  <ul class="footer-links">
+    <li><a href="/privacy.html">Privacy Policy</a></li>
+    <li><a href="/support.html">Support</a></li>
+    <li><a href="https://bff-app.me">bff-app.me</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 BFF — Be Freakin' Functional</p>
+</footer>
+
+</body>
+</html>
