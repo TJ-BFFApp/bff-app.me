@@ -12,7 +12,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy: #060810;
+      --navy: #0E0E55;
       --gold: #C9A84C;
       --gold-light: #F0D060;
       --text: #1d1d1f;
@@ -54,22 +54,22 @@
     .nav-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--text); }
     .nav-cta {
-      background: var(--navy); color: var(--gold);
+      background: #0E0E55 !important; color: #C9A84C !important;
       padding: 8px 20px; border-radius: 100px; font-size: 14px; font-weight: 600;
       text-decoration: none; border: 1px solid rgba(201,168,76,0.3); transition: opacity 0.2s;
     }
-    .nav-cta:hover { opacity: 0.82; color: var(--gold); }
+    .nav-cta:hover { opacity: 0.82; color: #C9A84C !important; }
 
     /* ── SHARED BUTTONS ── */
     .btn-navy {
       display: inline-flex; align-items: center; gap: 10px;
-      background: var(--navy); color: var(--gold);
+      background: #0E0E55 !important; color: #C9A84C !important;
       padding: 16px 28px; border-radius: 100px; font-size: 16px; font-weight: 600;
       text-decoration: none; border: 1px solid rgba(201,168,76,0.3);
       transition: transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 4px 20px rgba(6,8,16,0.18);
     }
-    .btn-navy:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(6,8,16,0.28); color: var(--gold); }
+    .btn-navy:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(6,8,16,0.28); color: #C9A84C !important; }
     .btn-navy svg { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
 
     .btn-gold {
@@ -104,7 +104,7 @@
     .hero {
       min-height: 100vh; display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      text-align: center; padding: 120px 24px 80px;
+      text-align: center; padding: 120px 24px 20px;
       background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
       position: relative; overflow: hidden;
     }
@@ -123,12 +123,12 @@
     .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
     .hero h1 {
       font-family: 'DM Serif Display', serif; font-size: clamp(48px, 7vw, 88px);
-      line-height: 1.0; letter-spacing: -0.03em; color: var(--navy); max-width: 820px; margin-bottom: 12px;
+      line-height: 1.0; letter-spacing: -0.03em; color: #0E0E55; max-width: 820px; margin-bottom: 12px;
     }
     .hero h1 em { font-style: italic; color: var(--gold); }
-    .hero-subtitle { font-size: clamp(18px, 2.5vw, 22px); color: var(--text-secondary); max-width: 520px; margin: 20px auto 48px; font-weight: 300; line-height: 1.5; }
+    .hero-subtitle { font-size: clamp(18px, 2.5vw, 22px); color: var(--text-secondary); max-width: 520px; margin: 20px auto 32px; font-weight: 300; line-height: 1.5; }
     .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: center; }
-    .hero-social-proof { margin-top: 56px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .hero-social-proof { margin-top: 28px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
     .avatars { display: flex; }
     .avatar { width: 32px; height: 32px; border-radius: 50%; border: 2px solid #fff; margin-left: -8px; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; color: #fff; }
     .avatar:first-child { margin-left: 0; }
@@ -137,10 +137,10 @@
     .social-proof-text strong { color: var(--text); font-weight: 500; }
 
     /* ── HOW IT WORKS ── */
-    .how-section { background: var(--bg-surface); padding: 100px 24px; display: flex; flex-direction: column; align-items: center; gap: 64px; }
+    .how-section { background: var(--bg-surface); padding: 40px 24px; display: flex; flex-direction: column; align-items: center; gap: 48px; }
     .how-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 760px; width: 100%; }
     .how-item { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 36px 24px; background: var(--bg); border-radius: var(--radius-lg); border: 0.5px solid var(--border); gap: 14px; }
-    .how-icon { width: 56px; height: 56px; background: var(--navy); border-radius: 16px; display: flex; align-items: center; justify-content: center; }
+    .how-icon { width: 56px; height: 56px; background: #0E0E55; border-radius: 16px; display: flex; align-items: center; justify-content: center; }
     .how-icon svg { width: 26px; height: 26px; fill: none; stroke: var(--gold); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
     .how-item h3 { font-size: 18px; font-weight: 500; color: var(--navy); }
     .how-item p { font-size: 15px; color: var(--text-secondary); line-height: 1.6; }
@@ -162,7 +162,7 @@
     /* Icon container — navy bg, gold icon */
     .persona-avatar {
       width: 80px; height: 80px; border-radius: 20px;
-      background: var(--navy); display: flex; align-items: center; justify-content: center;
+      background: #0E0E55; display: flex; align-items: center; justify-content: center;
       flex-shrink: 0; overflow: hidden;
     }
     .persona-avatar svg { width: 64px; height: 64px; }
@@ -183,7 +183,7 @@
     .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2px; border-radius: var(--radius-lg); overflow: hidden; border: 0.5px solid var(--border); }
     .feature-item { background: var(--bg); padding: 40px 36px; display: flex; flex-direction: column; gap: 12px; transition: background 0.2s; }
     .feature-item:hover { background: #fafafa; }
-    .feature-icon { width: 44px; height: 44px; background: var(--navy); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 4px; }
+    .feature-icon { width: 44px; height: 44px; background: #0E0E55; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 4px; }
     .feature-icon svg { width: 22px; height: 22px; fill: none; stroke: var(--gold); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
     .feature-title { font-size: 18px; font-weight: 500; color: var(--navy); }
     .feature-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.65; }
@@ -191,9 +191,9 @@
     /* ── TESTIMONIALS CAROUSEL ── */
     .testimonials-section { padding: 100px 24px; overflow: hidden; }
     .testimonials-header { text-align: center; margin-bottom: 56px; }
-    .carousel-wrapper { position: relative; max-width: 780px; margin: 0 auto; overflow: hidden; }
+    .carousel-wrapper { position: relative; max-width: 780px; margin: 0 auto; overflow: hidden; border-radius: 28px; }
     .carousel-track { display: flex; gap: 24px; transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-    .testimonial-card { background: var(--bg-surface2); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 36px; display: flex; flex-direction: column; gap: 16px; min-width: 100%; flex-shrink: 0; }
+    .testimonial-card { background: var(--bg-surface2); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 36px; display: flex; flex-direction: column; gap: 16px; min-width: 780px; max-width: 780px; flex-shrink: 0; box-sizing: border-box; }
     .stars { display: flex; gap: 3px; }
     .star { width: 14px; height: 14px; background: var(--gold); clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); }
     .testimonial-text { font-size: 17px; line-height: 1.7; color: var(--text); font-style: italic; }
@@ -500,11 +500,29 @@
           <div><p class="author-name">Tyler R.</p><p class="author-detail">3-week streak · Still going</p></div>
         </div>
       </div>
+      <div class="testimonial-card">
+        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="testimonial-text">"Queen doesn't let me make excuses. I skipped a workout and she came back harder the next day. I've lost 12 lbs and honestly feel unstoppable."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#b87bed;">AS</div>
+          <div><p class="author-name">Aisha S.</p><p class="author-detail">Lost 12 lbs · 6 weeks</p></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <p class="testimonial-text">"I've struggled with consistency my whole life. Having Bro check in every single day changed everything. First time I've hit a 30-day streak."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#4a8cf7;">DM</div>
+          <div><p class="author-name">Diego M.</p><p class="author-detail">30-day streak · Personal best</p></div>
+        </div>
+      </div>
     </div>
     <div class="carousel-dots">
       <button class="dot active" onclick="goTo(0)"></button>
       <button class="dot" onclick="goTo(1)"></button>
       <button class="dot" onclick="goTo(2)"></button>
+      <button class="dot" onclick="goTo(3)"></button>
+      <button class="dot" onclick="goTo(4)"></button>
     </div>
   </div>
 </section>
@@ -586,14 +604,14 @@
 </footer>
 
 <script>
-  var current = 0, total = 3;
+  var current = 0, total = 5;
   var track = document.getElementById('carouselTrack');
   var dots = document.querySelectorAll('.dot');
   var timer;
 
   function goTo(i) {
     current = i;
-    track.style.transform = 'translateX(calc(' + (-i * 100) + '% - ' + (i * 24) + 'px))';
+    var w = track.parentElement.offsetWidth; track.style.transform = 'translateX(-' + (i * (w + 24)) + 'px)';
     dots.forEach(function(d, j) { d.classList.toggle('active', j === i); });
   }
 
