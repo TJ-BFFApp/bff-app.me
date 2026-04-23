@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — BFF: Be Freakin' Functional</title>
+  <meta name="description" content="Get help with BFF — Be Freakin' Functional. FAQs, contact support, and account help." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0E0E55;
+      --gold: #C9A84C;
+      --gold-light: #F0D060;
+      --text: #1d1d1f;
+      --text-secondary: #6e6e73;
+      --text-tertiary: #aeaeb2;
+      --bg: #ffffff;
+      --bg-surface: #f5f5f7;
+      --bg-surface2: #fafafa;
+      --border: rgba(0,0,0,0.08);
+      --radius-lg: 28px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg); color: var(--text);
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--navy); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 64px;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 0.5px solid var(--border);
+    }
+    .nav-logo { text-decoration: none; line-height: 1; }
+    .nav-logo-name { font-family: 'DM Serif Display', serif; font-size: 20px; letter-spacing: -0.3px; color: var(--navy); display: block; }
+    .nav-logo-name span { color: var(--gold); }
+    .nav-logo-tagline { font-size: 10px; font-weight: 400; letter-spacing: 0.04em; color: var(--text-tertiary); display: block; margin-top: 2px; }
+    .nav-back { font-size: 14px; color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--text); text-decoration: none; }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 120px 24px 64px;
+      background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .page-header::before {
+      content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,168,76,0.1); border: 0.5px solid rgba(201,168,76,0.3);
+      border-radius: 100px; padding: 6px 14px; font-size: 13px; font-weight: 500;
+      color: #8a6a1a; margin-bottom: 24px;
+    }
+    .page-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+    .page-header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 5vw, 60px); line-height: 1.1;
+      letter-spacing: -0.03em; color: var(--navy); margin-bottom: 16px;
+    }
+    .page-header p { font-size: 17px; color: var(--text-secondary); font-weight: 300; max-width: 480px; margin: 0 auto; }
+
+    /* ── CONTACT CARDS ── */
+    .contact-section {
+      max-width: 900px; margin: 0 auto; padding: 64px 24px 0;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;
+    }
+
+    .contact-card {
+      border-radius: var(--radius-lg); padding: 36px;
+      display: flex; flex-direction: column; gap: 12px;
+      border: 0.5px solid var(--border);
+    }
+    .contact-card.primary { background: var(--navy); border-color: var(--navy); }
+    .contact-card.secondary { background: var(--bg-surface2); }
+
+    .contact-card-icon {
+      width: 48px; height: 48px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 4px;
+    }
+    .contact-card.primary .contact-card-icon { background: rgba(201,168,76,0.15); }
+    .contact-card.secondary .contact-card-icon { background: var(--navy); }
+
+    .contact-card-icon svg {
+      width: 24px; height: 24px; fill: none; stroke-width: 1.8;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .contact-card.primary .contact-card-icon svg { stroke: var(--gold); }
+    .contact-card.secondary .contact-card-icon svg { stroke: var(--gold); }
+
+    .contact-card-title {
+      font-family: 'DM Serif Display', serif; font-size: 22px; line-height: 1.2;
+    }
+    .contact-card.primary .contact-card-title { color: #fff; }
+    .contact-card.secondary .contact-card-title { color: var(--navy); }
+
+    .contact-card-desc { font-size: 15px; line-height: 1.6; }
+    .contact-card.primary .contact-card-desc { color: rgba(255,255,255,0.6); }
+    .contact-card.secondary .contact-card-desc { color: var(--text-secondary); }
+
+    .contact-card-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 15px; font-weight: 600; text-decoration: none; margin-top: 4px;
+      transition: opacity 0.2s;
+    }
+    .contact-card-link:hover { opacity: 0.75; text-decoration: none; }
+    .contact-card.primary .contact-card-link { color: var(--gold); }
+    .contact-card.secondary .contact-card-link { color: var(--navy); }
+
+    /* ── FAQ ── */
+    .faq-section {
+      max-width: 760px; margin: 0 auto; padding: 80px 24px 100px;
+    }
+    .faq-header { text-align: center; margin-bottom: 48px; }
+    .section-label {
+      font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 12px; display: block;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(32px, 4.5vw, 48px); line-height: 1.1;
+      letter-spacing: -0.025em; color: var(--navy);
+    }
+    .section-title em { font-style: italic; color: var(--gold); }
+
+    .faq-group { margin-bottom: 48px; }
+    .faq-group-title {
+      font-size: 13px; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 16px; padding-bottom: 12px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .faq-item {
+      border-bottom: 0.5px solid var(--border);
+      overflow: hidden;
+    }
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-question {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 0; gap: 16px; text-align: left;
+    }
+    .faq-question span {
+      font-size: 16px; font-weight: 500; color: var(--navy); line-height: 1.4; flex: 1;
+    }
+    .faq-question:hover span { color: var(--navy); opacity: 0.8; }
+
+    .faq-icon {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--bg-surface); border: 0.5px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: background 0.2s, transform 0.3s;
+    }
+    .faq-icon svg { width: 12px; height: 12px; stroke: var(--text-secondary); stroke-width: 2; stroke-linecap: round; transition: transform 0.3s; }
+
+    .faq-item.open .faq-icon { background: var(--navy); border-color: var(--navy); }
+    .faq-item.open .faq-icon svg { stroke: var(--gold); transform: rotate(45deg); }
+
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), padding 0.3s;
+      padding: 0;
+    }
+    .faq-item.open .faq-answer { max-height: 400px; padding-bottom: 20px; }
+
+    .faq-answer p {
+      font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 10px;
+    }
+    .faq-answer p:last-child { margin-bottom: 0; }
+    .faq-answer a { color: var(--navy); font-weight: 500; }
+
+    /* ── STILL NEED HELP ── */
+    .help-cta {
+      background: var(--navy); border-radius: var(--radius-lg);
+      padding: 48px; text-align: center;
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
+      margin: 0 24px 100px; max-width: 760px; margin: 0 auto 100px;
+      position: relative; overflow: hidden;
+    }
+    .help-cta::before {
+      content: ''; position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .help-cta h2 {
+      font-family: 'DM Serif Display', serif; font-size: 32px;
+      letter-spacing: -0.02em; color: #fff; line-height: 1.2;
+    }
+    .help-cta h2 em { font-style: italic; color: var(--gold); }
+    .help-cta p { font-size: 16px; color: rgba(255,255,255,0.55); max-width: 400px; }
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--gold); color: var(--navy);
+      padding: 14px 28px; border-radius: 100px; font-size: 15px; font-weight: 700;
+      text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; margin-top: 8px;
+    }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(201,168,76,0.35); color: var(--navy); text-decoration: none; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy); border-top: 0.5px solid rgba(255,255,255,0.06);
+      padding: 40px 48px; display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-logo { text-decoration: none; }
+    .footer-logo-name { font-family: 'DM Serif Display', serif; font-size: 18px; color: #fff; display: block; }
+    .footer-logo-name span { color: var(--gold); }
+    .footer-logo-tagline { font-size: 10px; color: rgba(255,255,255,0.25); letter-spacing: 0.04em; margin-top: 2px; display: block; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); text-decoration: none; }
+    .footer-copy { font-size: 13px; color: rgba(255,255,255,0.18); }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      footer { padding: 32px 20px; flex-direction: column; align-items: flex-start; }
+      .help-cta { margin: 0 20px 80px; padding: 36px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <span class="nav-logo-name">BFF<span>.</span></span>
+    <span class="nav-logo-tagline">Be Freakin' Functional</span>
+  </a>
+  <a href="/" class="nav-back">← Back to home</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-eyebrow">Help Center</div>
+  <h1>How can we help?</h1>
+  <p>Find answers to common questions or reach out directly — we've got you.</p>
+</div>
+
+<!-- CONTACT CARDS -->
+<div class="contact-section">
+
+  <div class="contact-card primary">
+    <div class="contact-card-icon">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    </div>
+    <p class="contact-card-title">Email Support</p>
+    <p class="contact-card-desc">Have a question, bug report, or feedback? Drop us an email and we'll get back to you within 24 hours.</p>
+    <a href="mailto:support@bff-app.me" class="contact-card-link">
+      support@bff-app.me →
+    </a>
+  </div>
+
+  <div class="contact-card secondary">
+    <div class="contact-card-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    </div>
+    <p class="contact-card-title">Privacy Concerns</p>
+    <p class="contact-card-desc">Questions about your data, deletion requests, or privacy rights? Our privacy team responds within 30 days.</p>
+    <a href="mailto:privacy@bff-app.me" class="contact-card-link">
+      privacy@bff-app.me →
+    </a>
+  </div>
+
+  <div class="contact-card secondary">
+    <div class="contact-card-icon">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    </div>
+    <p class="contact-card-title">Privacy Policy</p>
+    <p class="contact-card-desc">Read how we collect, use, and protect your personal and health data in full detail.</p>
+    <a href="/privacy.html" class="contact-card-link">
+      Read Privacy Policy →
+    </a>
+  </div>
+
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <div class="faq-header">
+    <span class="section-label">FAQ</span>
+    <h2 class="section-title">Common questions,<br/><em>answered.</em></h2>
+  </div>
+
+  <!-- GETTING STARTED -->
+  <div class="faq-group">
+    <p class="faq-group-title">Getting Started</p>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>What is BFF and how does it work?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">
+        <p>BFF — Be Freakin' Functional is an AI-powered accountability coach that helps you reach your health and fitness goals. You pick an AI persona (Bro, Bestie, Queen, or Ride or Die), set your goals, and your BFF checks in with you daily — tracking your diet, celebrating wins, and calling you out when you slip.</p>
+        <p>Unlike generic fitness apps, BFF focuses on accountability. It's not just logging data — it's having a best friend in your corner who actually keeps you honest.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>Which BFF persona should I choose?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">
+        <p><strong>Bro</strong> — High energy, zero tolerance for excuses. Great if you want someone to push you hard.</p>
+        <p><strong>Bestie</strong> — Warm, supportive, and honest. Perfect if you want encouragement with a dose of real talk.</p>
+        <p><strong>Queen</strong> — No nonsense, high standards. Ideal if you respond well to high expectations and sharp motivation.</p>
+        <p><strong>Ride or Die</strong> — Day one energy, always in it with you. Best if you want consistency and loyalty above all.</p>
+        <p>You can switch personas at any time from your settings — so don't stress about picking the perfect one right away.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>Is BFF available on Android?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">
+        <p>BFF is currently available on iOS (iPhone) only. An Android version is on our roadmap. If you'd like to be notified when Android launches, email us at <a href="mailto:support@bff-app.me">support@bff-app.me</a> and we'll add you to the waitlist.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>What iOS version do I need?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">
+        <p>BFF requires iOS 16 or later. We recommend keeping your iPhone updated to the latest iOS version for the best experience.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SUBSCRIPTION & BILLING -->
+  <div class="faq-group">
+    <p class="faq-group-title">Subscription & Billing</p>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>What's included in the free version?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">
+        <p>The free version includes limited BFF Chat messages, basic diet tracking, access to one AI persona, and your dashboard overview. It's a great way to experience BFF before committing to Premium.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>What does BFF Premium include?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">
+        <p>BFF Premium unlocks the full experience: unlimited BFF Chat, advanced diet and macro tracking, all 4 AI personas, progress charts and insights, the Wins Wall, and priority support.</p>
+        <p>Premium is $9.99/month or $59.99/year (saving you 50% vs monthly).</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>How do I cancel my subscription?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">
+        <p>Since BFF subscriptions are managed through Apple, you cancel through your iPhone settings — not through the app itself. Here's how:</p>
+        <p>1. Open iPhone <strong>Settings</strong> → tap your name → <strong>Subscriptions</strong><br/>2. Find <strong>BFF — Be Freakin' Functional</strong><br/>3. Tap <strong>Cancel Subscription</strong></p>
+        <p>Your Premium access continues until the end of your current billing period. You won't be charged again after cancelling.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>Can I get a refund?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">
+        <p>All purchases are processed through the Apple App Store. Refund requests are handled by Apple directly. You can request a refund at <a href="https://reportaproblem.apple.com" target="_blank">reportaproblem.apple.com</a>.</p>
+        <p>If you're having an issue with the app that led you to request a refund, please reach out to us at <a href="mailto:support@bff-app.me">support@bff-app.me</a> first — we'd love to help resolve it.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>I subscribed but Premium features aren't unlocking. What do I do?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">
+        <p>Try these steps in order:</p>
+        <p>1. Go to <strong>Settings</strong> in BFF and tap <strong>Restore Purchases</strong><br/>2. Force-close the app and reopen it<br/>3. Make sure you're signed into the same Apple ID used for the purchase<br/>4. Check your internet connection</p>
+        <p>If none of those work, email us at <a href="mailto:support@bff-app.me">support@bff-app.me</a> with your Apple ID email and we'll sort it out quickly.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ACCOUNT & DATA -->
+  <div class="faq-group">
+    <p class="faq-group-title">Account & Data</p>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>How do I delete my account?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">
+        <p>You can delete your account directly in the app by going to <strong>Settings → Account → Delete Account</strong>. This will permanently delete all your data within 30 days.</p>
+        <p>If you can't access the app, email <a href="mailto:privacy@bff-app.me">privacy@bff-app.me</a> with your account email and we'll process the deletion manually.</p>
+        <p>Note: deleting your account does not automatically cancel an active subscription — make sure to cancel that separately through your iPhone Settings first.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>Is my health data safe?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">
+        <p>Yes. Your health and fitness data is encrypted both in transit and at rest. We never sell your data to advertisers or third parties. It is only used to power your BFF experience.</p>
+        <p>For full details, read our <a href="/privacy.html">Privacy Policy</a>.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>Does BFF connect to Apple Health?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">
+        <p>BFF can optionally connect to Apple Health to read activity and nutrition data. This is entirely opt-in — you control exactly which data categories you share. You can revoke access at any time through iPhone <strong>Settings → Privacy & Security → Health → BFF</strong>.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>Can I use BFF on multiple devices?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">
+        <p>Yes. Sign in with your account on any iPhone and your data and Premium subscription will sync automatically. Just make sure you use the same Apple ID that was used for the original purchase.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- THE AI -->
+  <div class="faq-group">
+    <p class="faq-group-title">The AI</p>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>What AI powers the BFF personas?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">
+        <p>BFF is powered by Claude, an AI model built by Anthropic. Each persona (Bro, Bestie, Queen, Ride or Die) is a distinct character built on top of Claude, giving each one a genuinely different voice, tone, and coaching style.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>Is my BFF chat history private?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">
+        <p>Yes. Your conversations with your BFF are private and treated with the same sensitivity as health data. We do not use your personal conversations to train AI models. Messages are sent to Anthropic's API to generate responses, governed by their privacy policy.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>Is BFF a replacement for medical or nutritional advice?</span>
+        <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-answer">
+        <p>No. BFF is a wellness accountability tool, not a medical service. Nothing in the app should be taken as medical, nutritional, or clinical advice. Always consult a qualified healthcare professional before making significant changes to your diet, exercise, or health routine.</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- STILL NEED HELP -->
+<div class="help-cta" style="max-width: 760px; margin: 0 auto 100px; padding: 48px 36px;">
+  <h2>Still need help?<br/><em>We've got you.</em></h2>
+  <p>Can't find the answer you're looking for? Send us a message and we'll get back to you within 24 hours.</p>
+  <a href="mailto:support@bff-app.me" class="btn-gold">Email support@bff-app.me</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="/" class="footer-logo">
+    <span class="footer-logo-name">BFF<span>.</span></span>
+    <span class="footer-logo-tagline">Be Freakin' Functional</span>
+  </a>
+  <ul class="footer-links">
+    <li><a href="/privacy.html">Privacy Policy</a></li>
+    <li><a href="/support.html">Support</a></li>
+    <li><a href="https://bff-app.me">bff-app.me</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 BFF — Be Freakin' Functional</p>
+</footer>
+
+<script>
+  function toggle(btn) {
+    var item = btn.closest('.faq-item');
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(el) {
+      el.classList.remove('open');
+    });
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+
+</body>
+</html>
