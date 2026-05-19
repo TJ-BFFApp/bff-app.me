@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BFF — Be Fit & Functional | Your AI Accountability Coach</title>
-  <meta name="description" content="BFF is the AI accountability coach that keeps it real with you. Hit your health goals with a best friend in your corner 24/7." />
+  <meta name="description" content="BFF is the AI accountability coach that keeps it real with you. Coming soon to iOS and Android. Sign up for early access and get your first month free." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
@@ -120,7 +120,8 @@
       border-radius: 100px; padding: 6px 14px; font-size: 13px; font-weight: 500;
       color: #8a6a1a; margin-bottom: 28px;
     }
-    .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+    .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: blink 2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
     .hero h1 {
       font-family: 'DM Serif Display', serif; font-size: clamp(48px, 7vw, 88px);
       line-height: 1.0; letter-spacing: -0.03em; color: #0E0E55; max-width: 820px; margin-bottom: 12px;
@@ -128,13 +129,10 @@
     .hero h1 em { font-style: italic; color: var(--gold); }
     .hero-subtitle { font-size: clamp(18px, 2.5vw, 22px); color: var(--text-secondary); max-width: 520px; margin: 20px auto 32px; font-weight: 300; line-height: 1.5; }
     .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: center; }
-    .hero-social-proof { margin-top: 28px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-    .avatars { display: flex; }
-    .avatar { width: 32px; height: 32px; border-radius: 50%; border: 2px solid #fff; margin-left: -8px; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; color: #fff; }
-    .avatar:first-child { margin-left: 0; }
-    .av1{background:#e8826a;}.av2{background:#7b8ef7;}.av3{background:#5cb88a;}.av4{background:#f0b84a;}.av5{background:#b87bed;}
-    .social-proof-text { font-size: 13px; color: var(--text-secondary); }
-    .social-proof-text strong { color: var(--text); font-weight: 500; }
+    .hero-platforms {
+      margin-top: 24px; font-size: 13px; color: var(--text-tertiary);
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
 
     /* ── HOW IT WORKS ── */
     .how-section { background: var(--bg-surface); padding: 40px 24px; display: flex; flex-direction: column; align-items: center; gap: 48px; }
@@ -158,19 +156,15 @@
       transition: transform var(--transition), box-shadow var(--transition);
     }
     .persona-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
-
-    /* Icon container — navy bg, gold icon */
     .persona-avatar {
       width: 80px; height: 80px; border-radius: 20px;
       background: #0E0E55; display: flex; align-items: center; justify-content: center;
       flex-shrink: 0; overflow: hidden;
     }
     .persona-avatar svg { width: 64px; height: 64px; }
-
     .persona-name { font-family: 'DM Serif Display', serif; font-size: 24px; letter-spacing: -0.02em; color: var(--navy); }
     .persona-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
     .persona-quote { margin-top: auto; font-size: 13px; font-style: italic; color: var(--text-tertiary); padding-top: 14px; border-top: 0.5px solid var(--border); line-height: 1.5; }
-
     .persona-card.bro    { border-top: 3px solid #4a8cf7; }
     .persona-card.bestie { border-top: 3px solid #f77b9a; }
     .persona-card.queen  { border-top: 3px solid var(--gold); }
@@ -235,13 +229,78 @@
     .btn-pricing-premium { display: block; text-align: center; padding: 14px; border-radius: 100px; background: var(--gold); font-size: 15px; font-weight: 600; color: var(--navy); text-decoration: none; transition: opacity 0.2s, transform 0.2s; }
     .btn-pricing-premium:hover { opacity: 0.9; transform: translateY(-1px); }
 
-    /* ── CTA ── */
-    .cta-section { padding: 120px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 32px; background: var(--navy); position: relative; overflow: hidden; }
-    .cta-section::before { content: ''; position: absolute; top: -150px; left: 50%; transform: translateX(-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%); pointer-events: none; }
-    .cta-section .section-label { color: rgba(201,168,76,0.5); }
-    .cta-section .section-title { color: #fff; }
-    .cta-section .section-body { color: rgba(255,255,255,0.5); }
-    .cta-legal { font-size: 13px; color: rgba(255,255,255,0.25); }
+    /* ── WAITLIST SECTION ── */
+    #waitlist {
+      padding: 120px 24px;
+      background: var(--navy);
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    #waitlist::before {
+      content: ''; position: absolute; top: -150px; left: 50%; transform: translateX(-50%);
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    #waitlist::after {
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+      background-size: 64px 64px; pointer-events: none;
+    }
+    .waitlist-inner { position: relative; z-index: 1; max-width: 600px; width: 100%; text-align: center; }
+    .waitlist-inner .section-label { color: rgba(201,168,76,0.6); }
+    .waitlist-inner .section-title { color: #fff; margin: 0 auto 16px; }
+    .waitlist-inner .section-body { color: rgba(255,255,255,0.5); margin: 0 auto 16px; }
+
+    .early-offer {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(240,208,96,0.08); border: 0.5px solid rgba(240,208,96,0.2);
+      border-radius: 100px; padding: 10px 22px;
+      font-size: 14px; font-weight: 500; color: var(--gold-light);
+      margin-bottom: 48px; letter-spacing: 0.02em;
+    }
+
+    /* FORM */
+    .waitlist-form { display: flex; flex-direction: column; gap: 14px; text-align: left; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-field { display: flex; flex-direction: column; gap: 7px; }
+    .form-field label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+    .form-field input, .form-field select {
+      background: rgba(255,255,255,0.06); border: 0.5px solid rgba(255,255,255,0.12);
+      border-radius: 14px; padding: 15px 18px;
+      font-family: 'DM Sans', sans-serif; font-size: 15px; color: #fff;
+      outline: none; transition: all 0.2s ease;
+      -webkit-appearance: none; appearance: none;
+    }
+    .form-field select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 18px center; padding-right: 44px; cursor: pointer;
+    }
+    .form-field select option { background: #1a1a5e; color: #fff; }
+    .form-field input::placeholder { color: rgba(255,255,255,0.2); }
+    .form-field input:focus, .form-field select:focus {
+      border-color: rgba(201,168,76,0.5); background: rgba(255,255,255,0.09);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.08);
+    }
+    .submit-btn {
+      background: var(--gold); color: var(--navy);
+      font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 700;
+      padding: 18px 36px; border-radius: 100px; border: none; cursor: pointer;
+      transition: all 0.2s ease; margin-top: 8px; width: 100%;
+    }
+    .submit-btn:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(201,168,76,0.25); }
+    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .form-note { font-size: 13px; color: rgba(255,255,255,0.25); text-align: center; margin-top: 4px; }
+
+    /* SUCCESS */
+    .success-state {
+      display: none; flex-direction: column; align-items: center; gap: 16px;
+      padding: 48px 32px; background: rgba(201,168,76,0.06);
+      border: 0.5px solid rgba(201,168,76,0.18); border-radius: var(--radius-lg);
+    }
+    .success-icon { font-size: 48px; }
+    .success-state h3 { font-family: 'DM Serif Display', serif; font-size: 28px; color: #fff; }
+    .success-state p { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.6; max-width: 360px; text-align: center; }
 
     /* ── FOOTER ── */
     footer { background: var(--navy); border-top: 0.5px solid rgba(255,255,255,0.06); padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
@@ -266,6 +325,7 @@
       .how-grid { grid-template-columns: 1fr; }
       .personas-grid { grid-template-columns: 1fr; }
       .pricing-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
       footer { padding: 32px 20px; flex-direction: column; align-items: flex-start; }
     }
   </style>
@@ -276,35 +336,28 @@
 <nav>
   <a href="#" class="nav-logo">
     <span class="nav-logo-name">BFF<span>.</span></span>
-    <span class="nav-logo-tagline">Be Fit & Functional</span>
+    <span class="nav-logo-tagline">Be Fit &amp; Functional</span>
   </a>
   <ul class="nav-links">
     <li><a href="#how-it-works">How it works</a></li>
     <li><a href="#personas">Your BFF</a></li>
     <li><a href="#pricing">Pricing</a></li>
   </ul>
-  <a href="#download" class="nav-cta">Download App</a>
+  <a href="#waitlist" class="nav-cta">Get Early Access</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow fade-up">Your AI Accountability Coach</div>
+  <div class="hero-eyebrow fade-up">Coming Soon · iOS &amp; Android</div>
   <h1 class="fade-up d1">The friend who<br/><em>keeps it real</em><br/>with you.</h1>
   <p class="hero-subtitle fade-up d2">BFF isn't another fitness app that cheers you on no matter what. It's the accountability you actually need — honest, personal, relentless.</p>
   <div class="hero-actions fade-up d3">
-    <a href="#download" class="btn-navy" id="download">
-      <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-      Download on App Store
+    <a href="#waitlist" class="btn-navy">
+      ⭐ Get Early Access — First Month Free
     </a>
     <a href="#how-it-works" class="btn-ghost">See how it works →</a>
   </div>
-  <div class="hero-social-proof fade-up d4">
-    <div class="avatars">
-      <div class="avatar av1">JL</div><div class="avatar av2">MR</div>
-      <div class="avatar av3">SK</div><div class="avatar av4">TA</div><div class="avatar av5">BW</div>
-    </div>
-    <p class="social-proof-text"><strong>Join thousands</strong> already hitting their goals</p>
-  </div>
+  <p class="hero-platforms fade-up d4">🍎 iOS &nbsp;·&nbsp; 🤖 Android &nbsp;·&nbsp; Launching soon</p>
 </section>
 
 <!-- HOW IT WORKS -->
@@ -347,8 +400,6 @@
       <p class="section-body" style="margin:0 auto;">Pick the coach who speaks your language. Switch anytime.</p>
     </div>
     <div class="personas-grid">
-
-      <!-- BRO — real SVG, recolored navy bg + gold paths -->
       <div class="persona-card bro">
         <div class="persona-avatar">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 768" width="64" height="64">
@@ -369,7 +420,6 @@
         <p class="persona-quote">"Bro, you skipped leg day AGAIN? Not on my watch."</p>
       </div>
 
-      <!-- BESTIE — real SVG, recolored gold paths on navy bg -->
       <div class="persona-card bestie">
         <div class="persona-avatar">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 768" width="64" height="64">
@@ -390,7 +440,6 @@
         <p class="persona-quote">"Okay babe, we need to talk about those late-night snacks."</p>
       </div>
 
-      <!-- QUEEN — real SVG, recolored gold on navy -->
       <div class="persona-card queen">
         <div class="persona-avatar">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 768" width="64" height="64">
@@ -407,7 +456,6 @@
         <p class="persona-quote">"You didn't work this hard to give up now. Move."</p>
       </div>
 
-      <!-- RIDE OR DIE — real SVG, gold on navy -->
       <div class="persona-card rod">
         <div class="persona-avatar">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 768" width="64" height="64">
@@ -421,7 +469,6 @@
         <p class="persona-desc">Day one energy, always. Ride or Die is in it with you no matter what — through the wins, the setbacks, and everything in between.</p>
         <p class="persona-quote">"We started this together. We're finishing it together."</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -550,7 +597,7 @@
           <li><div class="check"></div>1 AI persona</li>
           <li><div class="check"></div>Dashboard overview</li>
         </ul>
-        <a href="#download" class="btn-pricing-free">Get started free</a>
+        <a href="#waitlist" class="btn-pricing-free">Join the waitlist</a>
       </div>
       <div class="pricing-card featured">
         <div><span class="pricing-badge">Most popular</span></div>
@@ -563,44 +610,76 @@
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
           <li><div class="check"></div>Unlimited BFF Chat</li>
-          <li><div class="check"></div>Advanced diet & macro tracking</li>
+          <li><div class="check"></div>Advanced diet &amp; macro tracking</li>
           <li><div class="check"></div>All 4 AI personas</li>
-          <li><div class="check"></div>Progress charts & insights</li>
+          <li><div class="check"></div>Progress charts &amp; insights</li>
           <li><div class="check"></div>Wins Wall</li>
           <li><div class="check"></div>Priority support</li>
         </ul>
-        <a href="#download" class="btn-pricing-premium">Start Premium — $9.99/mo</a>
+        <a href="#waitlist" class="btn-pricing-premium">Get Early Access — First Month Free</a>
         <p style="font-size:12px;color:rgba(255,255,255,0.3);text-align:center;">Or $59.99/year — save 50%</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="cta-section">
-  <span class="section-label">Ready?</span>
-  <h2 class="section-title">Stop waiting.<br/><em>Start becoming.</em></h2>
-  <p class="section-body">Your BFF is ready. Are you?</p>
-  <a href="https://apps.apple.com" class="btn-gold">
-    <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-    Download on the App Store
-  </a>
-  <p class="cta-legal">Free to download · iOS 16+ · Premium available</p>
+<!-- WAITLIST -->
+<section id="waitlist">
+  <div class="waitlist-inner">
+    <span class="section-label">Early Access</span>
+    <h2 class="section-title">Be first.<br/><em>Get a month free.</em></h2>
+    <p class="section-body">BFF is coming soon to iOS and Android. Sign up now and we'll notify you the moment it launches — your first month of Premium is on us.</p>
+    <br/>
+    <div class="early-offer">⭐&nbsp; Early signup — first month of Premium free</div>
+
+    <div class="waitlist-form" id="waitlistForm">
+      <div class="form-row">
+        <div class="form-field">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" placeholder="Alex" />
+        </div>
+        <div class="form-field">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" placeholder="Johnson" />
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="alex@example.com" />
+      </div>
+      <div class="form-field">
+        <label for="platform">Preferred Platform</label>
+        <select id="platform">
+          <option value="" disabled selected>Select a platform</option>
+          <option value="iOS">iOS (iPhone)</option>
+          <option value="Android">Android</option>
+          <option value="Either">Either / Both</option>
+        </select>
+      </div>
+      <button class="submit-btn" id="submitBtn" onclick="submitWaitlist()">Count Me In — I Want My Free Month</button>
+      <p class="form-note">No spam, ever. Just your launch notification and free month offer.</p>
+    </div>
+
+    <div class="success-state" id="successState">
+      <div class="success-icon">🎉</div>
+      <h3>You're on the list!</h3>
+      <p>We'll notify you the moment BFF launches. Your first month of Premium is locked in — details coming when we go live.</p>
+    </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <a href="#" class="footer-logo">
     <span class="footer-logo-name">BFF<span>.</span></span>
-    <span class="footer-logo-tagline">Be Fit & Functional</span>
+    <span class="footer-logo-tagline">Be Fit &amp; Functional</span>
   </a>
   <ul class="footer-links">
     <li><a href="/privacy.html">Privacy Policy</a></li>
-    <li><a href="#">Terms of Service</a></li>
+    <li><a href="https://www.bff-app.me/terms">Terms of Service</a></li>
     <li><a href="/support.html">Support</a></li>
-    <li><a href="https://bff-app.me">bff-app.me</a></li>
   </ul>
-  <p class="footer-copy">© 2025 BFF - Be Fit & Functional</p>
+  <p class="footer-copy">© 2026 BFF — Be Fit &amp; Functional. Coming soon to iOS and Android.</p>
 </footer>
 
 <script>
@@ -618,6 +697,46 @@
   track.addEventListener('mouseenter', function() { clearInterval(timer); });
   track.addEventListener('mouseleave', function() { timer = setInterval(function(){ goTo((current+1)%total); }, 4000); });
   timer = setInterval(function(){ goTo((current+1)%total); }, 4000);
+
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzNh_EO6cznrBWGZIj8mGdk2HhnWTv-GZB_nhxXJaO5OAiTXTIetei9PJavbo3m32GC/exec';
+
+  async function submitWaitlist() {
+    var firstName = document.getElementById('firstName').value.trim();
+    var lastName  = document.getElementById('lastName').value.trim();
+    var email     = document.getElementById('email').value.trim();
+    var platform  = document.getElementById('platform').value;
+
+    if (!firstName || !lastName || !email || !platform) {
+      alert('Please fill in all fields.');
+      return;
+    }
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    var btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Signing you up...';
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName: firstName, lastName: lastName, email: email, platform: platform })
+      });
+      document.getElementById('waitlistForm').style.display = 'none';
+      var success = document.getElementById('successState');
+      success.style.display = 'flex';
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'Count Me In — I Want My Free Month';
+      alert('Something went wrong. Please try again.');
+    }
+  }
 </script>
 </body>
 </html>
