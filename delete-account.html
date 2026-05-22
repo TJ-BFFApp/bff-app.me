@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delete Account – BFF</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #060810;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+    .logo {
+      font-size: 32px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #F0D060, #FFF0A0, #C9A84C);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    .tagline {
+      color: #8899aa;
+      font-size: 14px;
+      margin-bottom: 48px;
+    }
+    .card {
+      background: #0E1830;
+      border: 1px solid #1e2f50;
+      border-radius: 16px;
+      padding: 40px 32px;
+      margin-bottom: 32px;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #ffffff;
+    }
+    p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #aabbcc;
+      margin-bottom: 16px;
+    }
+    .steps {
+      text-align: left;
+      margin: 24px 0;
+    }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .step-number {
+      background: linear-gradient(135deg, #F0D060, #C9A84C);
+      color: #060810;
+      font-weight: 800;
+      font-size: 13px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-text {
+      font-size: 15px;
+      color: #aabbcc;
+      line-height: 1.6;
+      padding-top: 3px;
+    }
+    .email-button {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, #F0D060, #C9A84C);
+      color: #060810;
+      font-weight: 700;
+      font-size: 15px;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+    .warning {
+      background: #1a1020;
+      border: 1px solid #3a2040;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-top: 24px;
+      text-align: left;
+    }
+    .warning-title {
+      color: #cc8844;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .warning p {
+      font-size: 13px;
+      color: #997766;
+      margin: 0;
+    }
+    .footer {
+      color: #445566;
+      font-size: 13px;
+    }
+    .footer a {
+      color: #6688aa;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">BFF</div>
+    <div class="tagline">Be Fit and Functional</div>
+
+    <div class="card">
+      <h1>Delete Your Account</h1>
+      <p>We're sorry to see you go. You can request deletion of your account and all associated data by following the steps below.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-text">Send an email to <strong style="color:#F0D060;">support@bff-app.me</strong> with the subject line <strong style="color:#ffffff;">"Delete My Account"</strong></div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-text">Include the email address associated with your BFF account so we can locate your data.</div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-text">We will process your request and confirm deletion within <strong style="color:#ffffff;">7 business days.</strong></div>
+        </div>
+      </div>
+
+      <a href="mailto:support@bff-app.me?subject=Delete%20My%20Account" class="email-button">
+        Email Us to Delete Account
+      </a>
+
+      <div class="warning">
+        <div class="warning-title">⚠️ This action is permanent</div>
+        <p>Deleting your account will permanently remove your profile, chat history, progress data, and all personal information. This cannot be undone. Active subscriptions must be cancelled separately through the App Store or Google Play.</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="index.html">Home</a> &nbsp;·&nbsp;
+      <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="support.html">Support</a>
+    </div>
+  </div>
+</body>
+</html>
