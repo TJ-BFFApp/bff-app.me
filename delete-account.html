@@ -4,11 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Delete Account - BFF: Be Fit and Functional</title>
+  <link rel="icon" type="image/png" href="/icon.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/icon.png" sizes="16x16" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon.png" />
+  <link rel="shortcut icon" href="/icon.png" />
   <meta name="description" content="Request deletion of your BFF account and all associated data." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="icon" type="image/png" href="/icon.png" />
-  <link rel="apple-touch-icon" href="/icon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -34,7 +36,8 @@
       backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
       border-bottom: 0.5px solid rgba(6,8,16,0.08);
     }
-    .nav-logo { text-decoration: none; line-height: 1; }
+    .nav-logo { text-decoration: none; line-height: 1; display: flex; align-items: center; gap: 10px; }
+    .nav-logo-icon { width: 36px; height: 36px; object-fit: cover; border-radius: 9px; flex-shrink: 0; }
     .nav-logo-name { font-family: 'DM Serif Display', serif; font-size: 20px; letter-spacing: -0.3px; color: var(--navy); display: block; }
     .nav-logo-name span { color: var(--gold-mid); }
     .nav-logo-tagline { font-size: 10px; font-weight: 400; letter-spacing: 0.06em; color: var(--text-tertiary); display: block; margin-top: 2px; text-transform: uppercase; }
@@ -123,8 +126,11 @@
 
 <nav>
   <a href="/" class="nav-logo">
-    <span class="nav-logo-name">BFF<span>.</span></span>
-    <span class="nav-logo-tagline">Be Fit and Functional</span>
+    <img src="/icon.png" class="nav-logo-icon" alt="BFF" />
+    <div>
+      <span class="nav-logo-name">BFF<span>.</span></span>
+      <span class="nav-logo-tagline">Be Fit and Functional</span>
+    </div>
   </a>
   <a href="/" class="nav-back">← Back to home</a>
 </nav>
