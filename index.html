@@ -4,11 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BFF - Be Fit and Functional | Your AI Accountability Coach</title>
+  <link rel="icon" type="image/png" href="/icon.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/icon.png" sizes="16x16" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon.png" />
+  <link rel="shortcut icon" href="/icon.png" />
   <meta name="description" content="BFF is the AI accountability coach that keeps it real with you. Hit your health goals with a best friend in your corner 24/7." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="icon" type="image/png" href="/icon.png" />
-  <link rel="apple-touch-icon" href="/icon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -56,7 +58,8 @@
       -webkit-backdrop-filter: saturate(180%) blur(20px);
       border-bottom: 0.5px solid rgba(6,8,16,0.08);
     }
-    .nav-logo { text-decoration: none; line-height: 1; }
+    .nav-logo { text-decoration: none; line-height: 1; display: flex; align-items: center; gap: 10px; }
+    .nav-logo-icon { width: 36px; height: 36px; object-fit: cover; border-radius: 9px; flex-shrink: 0; }
     .nav-logo-name { font-family: 'DM Serif Display', serif; font-size: 20px; letter-spacing: -0.3px; color: var(--navy); display: block; }
     .nav-logo-name span { color: var(--gold-mid); }
     .nav-logo-tagline { font-size: 10px; font-weight: 400; letter-spacing: 0.06em; color: var(--text-tertiary); display: block; margin-top: 2px; text-transform: uppercase; }
@@ -368,8 +371,12 @@
     @media(max-width:1024px){ .tabs-showcase{grid-template-columns:repeat(2,1fr);} .personas-grid{grid-template-columns:repeat(2,1fr);} .features-grid{grid-template-columns:repeat(2,1fr);} .pricing-grid-3{grid-template-columns:1fr 1fr;} }
     @media(max-width:700px){ nav{padding:0 20px;} .nav-links{display:none;} .how-grid{grid-template-columns:1fr;} .personas-grid{grid-template-columns:1fr;} .pricing-grid{grid-template-columns:1fr;} .pricing-grid-3{grid-template-columns:1fr;} .features-grid{grid-template-columns:1fr;} .tabs-showcase{grid-template-columns:1fr;} footer{padding:32px 20px;flex-direction:column;align-items:flex-start;} }
 
-    .app-icon { width: 88px; height: 88px; object-fit: contain; margin-bottom: 4px; filter: drop-shadow(0 4px 16px rgba(6,8,16,0.12)); }
-    .app-icon-sm { width: 64px; height: 64px; object-fit: contain; filter: drop-shadow(0 3px 10px rgba(6,8,16,0.1)); }
+    .app-icon-wrap { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 4px; }
+    .app-icon { width: 88px; height: 88px; object-fit: cover; border-radius: 22px; box-shadow: 0 8px 28px rgba(6,8,16,0.16), 0 2px 8px rgba(6,8,16,0.08); }
+    .app-icon-name { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-tertiary); }
+    .app-icon-sm-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; position: relative; z-index: 1; }
+    .app-icon-sm { width: 64px; height: 64px; object-fit: cover; border-radius: 16px; box-shadow: 0 6px 20px rgba(6,8,16,0.2), 0 2px 6px rgba(6,8,16,0.1); }
+    .app-icon-sm-name { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
   </style>
 </head>
 <body>
@@ -377,8 +384,11 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <span class="nav-logo-name">BFF<span>.</span></span>
-    <span class="nav-logo-tagline">Be Fit and Functional</span>
+    <img src="/icon.png" class="nav-logo-icon" alt="BFF" />
+    <div>
+      <span class="nav-logo-name">BFF<span>.</span></span>
+      <span class="nav-logo-tagline">Be Fit and Functional</span>
+    </div>
   </a>
   <ul class="nav-links">
     <li><a href="#app">The App</a></li>
@@ -390,7 +400,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <img src="/icon.png" class="app-icon fade-up" alt="BFF App Icon" />
+  <div class="app-icon-wrap fade-up"><img src="/icon.png" class="app-icon" alt="BFF App Icon" /><span class="app-icon-name">Be Fit and Functional</span></div>
   <div class="hero-eyebrow fade-up">Your AI Accountability Coach</div>
   <h1 class="fade-up d1">The coach who<br/><em>keeps it real</em><br/>with you.</h1>
   <p class="hero-subtitle fade-up d2">BFF isn't another fitness app that cheers you on no matter what. It's the accountability you actually need - honest, personal, relentless.</p>
@@ -771,7 +781,7 @@
 
 <!-- FINAL CTA -->
 <section class="cta-section">
-  <img src="/icon.png" class="app-icon-sm" alt="BFF App Icon" style="position:relative;z-index:1;" />
+  <div class="app-icon-sm-wrap"><img src="/icon.png" class="app-icon-sm" alt="BFF App Icon" /><span class="app-icon-sm-name">Be Fit and Functional</span></div>
   <span class="section-label">Early Access</span>
   <h2 class="section-title">Be first.<br/><em>Get a month free.</em></h2>
   <p class="section-body">BFF is coming soon to iOS and Android. Sign up now and we'll notify you the moment it launches - your first month of Premium is on us.</p>
