@@ -1,124 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms of Use - BFF: Be Fit and Functional</title>
-<meta name="description" content="Terms of Use for BFF - Be Fit and Functional, for iOS and Android.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy: #060810;
-    --gold: #F0D060;
-    --gold-mid: #C9A227;
-    --canvas: #F7F8FC;
-    --canvas-alt: #EEF0F5;
-    --text-secondary: #6B7280;
-    --text-tertiary: #9CA3AF;
-    --border: rgba(6,8,16,0.08);
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: 'Poppins', -apple-system, 'SF Pro', 'Inter', sans-serif;
-    background: linear-gradient(180deg, var(--canvas) 0%, var(--canvas-alt) 100%);
-    color: var(--navy);
-    line-height: 1.6;
-  }
-  header {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 40px 24px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .logo { font-weight: 700; font-size: 15px; color: var(--navy); text-decoration: none; }
-  .back-link { font-size: 13px; color: var(--text-secondary); text-decoration: none; }
-  main { max-width: 760px; margin: 0 auto; padding: 20px 24px 80px; }
-  .eyebrow {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--gold-mid);
-    margin-top: 32px;
-  }
-  h1 { font-size: 34px; font-weight: 700; margin: 10px 0 8px; }
-  .updated { font-size: 13px; color: var(--text-tertiary); margin-bottom: 20px; }
-  .note {
-    background: rgba(240,208,96,0.08);
-    border: 0.5px solid rgba(201,162,39,0.28);
-    border-radius: 12px;
-    padding: 14px 18px;
-    font-size: 13px;
-    color: var(--text-secondary);
-    margin-bottom: 32px;
-  }
-  .lede { font-size: 14.5px; color: #2A2E38; margin-bottom: 36px; }
-  section { margin-bottom: 30px; }
-  .sec-num { font-size: 12px; font-weight: 600; color: var(--gold-mid); letter-spacing: 0.05em; }
-  h2 { font-size: 18px; font-weight: 600; margin: 4px 0 12px; }
-  h3 { font-size: 15px; font-weight: 600; margin: 18px 0 8px; }
-  p { font-size: 14.5px; color: #2A2E38; margin: 0 0 12px; }
-  ul { margin: 0 0 12px; padding-left: 22px; }
-  li { font-size: 14.5px; color: #2A2E38; margin-bottom: 8px; }
-  a { color: var(--gold-mid); }
-  .caps { font-size: 13.5px; color: #2A2E38; }
-  .platform-block {
-    background: rgba(255,255,255,0.6);
-    border: 0.5px solid rgba(255,255,255,0.9);
-    border-radius: 14px;
-    padding: 18px 20px;
-    margin-bottom: 16px;
-  }
-  .platform-tag {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--navy);
-    background: var(--gold);
-    padding: 3px 10px;
-    border-radius: 6px;
-    margin-bottom: 10px;
-  }
-  footer {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 40px 24px 60px;
-    border-top: 1px solid var(--border);
-    text-align: center;
-  }
-  footer .flinks { margin: 16px 0; }
-  footer a { color: var(--text-secondary); text-decoration: none; font-size: 13px; margin: 0 10px; }
-  footer a:hover { color: var(--gold-mid); }
-  footer .copyright { font-size: 12px; color: var(--text-tertiary); margin-top: 12px; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Use - BFF: Be Fit and Functional</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" href="/icon.png" sizes="32x32" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <meta name="description" content="Terms of Use for BFF - Be Fit and Functional, for iOS and Android." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #060810; --gold: #F0D060; --gold-mid: #C9A227;
+      --canvas: #F7F8FC; --canvas-alt: #EEF0F5;
+      --glass-white: rgba(255,255,255,0.68); --glass-border: rgba(255,255,255,0.92);
+      --glass-shadow: 0 2px 10px rgba(6,8,16,0.05); --glass-inner: inset 0 1px 0 rgba(255,255,255,0.95);
+      --text: #060810; --text-secondary: #6B7280; --text-tertiary: #9CA3AF;
+      --bg: #ffffff; --border: rgba(0,0,0,0.07); --radius-lg: 20px; --radius-xl: 28px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: var(--navy); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 64px;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 0.5px solid rgba(6,8,16,0.08);
+    }
+    .nav-logo { text-decoration: none; line-height: 1; display: flex; align-items: center; gap: 10px; }
+    .nav-logo-icon { width: 36px; height: 36px; object-fit: cover; border-radius: 9px; flex-shrink: 0; }
+    .nav-logo-name { font-family: 'DM Serif Display', serif; font-size: 20px; letter-spacing: -0.3px; color: var(--navy); display: block; }
+    .nav-logo-name span { color: var(--gold-mid); }
+    .nav-logo-tagline { font-size: 10px; font-weight: 400; letter-spacing: 0.06em; color: var(--text-tertiary); display: block; margin-top: 2px; text-transform: uppercase; }
+    .nav-back { font-size: 14px; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--text); text-decoration: none; }
+
+    .page-header {
+      padding: 100px 24px 40px;
+      background: linear-gradient(180deg, var(--canvas) 0%, var(--canvas-alt) 100%);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .page-header::before { content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(240,208,96,0.07) 0%, transparent 70%); pointer-events: none; }
+    .page-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,162,39,0.1); border: 0.5px solid rgba(201,162,39,0.3); border-radius: 100px; padding: 6px 14px; font-size: 12px; font-weight: 600; color: #7A5800; margin-bottom: 20px; letter-spacing: 0.05em; text-transform: uppercase; }
+    .page-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold-mid); }
+    .page-header h1 { font-family: 'DM Serif Display', serif; font-size: clamp(32px, 5vw, 56px); line-height: 1.1; letter-spacing: -0.03em; color: var(--navy); margin-bottom: 14px; }
+    .page-header p { font-size: 17px; color: var(--text-secondary); max-width: 480px; margin: 0 auto; line-height: 1.6; }
+    .updated-date { display: inline-block; margin-top: 16px; font-size: 13px; color: var(--text-tertiary); }
+
+    .content { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    .toc {
+      background: var(--glass-white); border: 0.5px solid var(--glass-border);
+      border-radius: var(--radius-xl); padding: 28px 32px; margin-bottom: 48px;
+      box-shadow: var(--glass-shadow), var(--glass-inner);
+    }
+    .toc-title { font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--gold-mid); margin-bottom: 14px; }
+    .toc ol { list-style: none; display: flex; flex-direction: column; gap: 8px; counter-reset: toc-counter; }
+    .toc ol li { counter-increment: toc-counter; display: flex; align-items: baseline; gap: 10px; }
+    .toc ol li::before { content: counter(toc-counter, decimal-leading-zero); font-size: 11px; font-weight: 700; color: var(--gold-mid); min-width: 20px; }
+    .toc ol li a { font-size: 15px; color: var(--text-secondary); transition: color 0.2s; }
+    .toc ol li a:hover { color: var(--navy); text-decoration: none; }
+
+    .highlight-box { background: rgba(201,162,39,0.07); border: 0.5px solid rgba(201,162,39,0.2); border-left: 3px solid var(--gold-mid); border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 20px 0; }
+    .highlight-box p { font-size: 15px; color: var(--text); margin: 0; line-height: 1.65; }
+
+    .policy-section { margin-bottom: 48px; padding-bottom: 48px; border-bottom: 0.5px solid var(--border); }
+    .policy-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .section-number { font-size: 11px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--gold-mid); display: block; margin-bottom: 6px; }
+    .policy-section h2 { font-family: 'DM Serif Display', serif; font-size: 26px; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 18px; line-height: 1.2; }
+    .policy-section h3 { font-size: 16px; font-weight: 700; color: var(--text); margin: 24px 0 10px; }
+    .policy-section p { font-size: 15px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 14px; }
+    .policy-section p:last-child { margin-bottom: 0; }
+
+    .policy-section ul, .policy-section ol { margin: 10px 0 14px; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .policy-section ul li, .policy-section ol li { font-size: 15px; color: var(--text-secondary); line-height: 1.65; display: flex; align-items: flex-start; gap: 12px; }
+    .policy-section ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold-mid); flex-shrink: 0; margin-top: 9px; }
+    .policy-section ol { counter-reset: ol-counter; }
+    .policy-section ol li { counter-increment: ol-counter; }
+    .policy-section ol li::before { content: counter(ol-counter) '.'; font-size: 13px; font-weight: 700; color: var(--gold-mid); flex-shrink: 0; min-width: 18px; margin-top: 2px; }
+
+    .platform-block { background: var(--canvas); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 24px 26px; margin-bottom: 18px; }
+    .platform-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); background: var(--gold); padding: 4px 12px; border-radius: 100px; margin-bottom: 14px; }
+
+    .contact-card { background: var(--navy); border-radius: var(--radius-xl); padding: 32px; margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+    .contact-card-title { font-family: 'DM Serif Display', serif; font-size: 22px; color: #fff; margin-bottom: 6px; }
+    .contact-card p { color: rgba(255,255,255,0.6); margin: 0; font-size: 15px; }
+    .contact-card a { color: var(--gold); font-weight: 600; }
+    .contact-card a:hover { text-decoration: underline; }
+
+    footer { background: var(--navy); border-top: 0.5px solid rgba(255,255,255,0.06); padding: 36px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { text-decoration: none; }
+    .footer-logo-name { font-family: 'DM Serif Display', serif; font-size: 18px; color: #fff; display: block; }
+    .footer-logo-name span { color: var(--gold-mid); }
+    .footer-logo-tagline { font-size: 10px; color: rgba(255,255,255,0.22); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 2px; display: block; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.32); transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); text-decoration: none; }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.16); }
+    @media(max-width:600px){ nav{padding:0 20px;} footer{padding:28px 20px;flex-direction:column;align-items:flex-start;} }
+  </style>
 </head>
 <body>
 
-<header>
-  <a class="logo" href="https://www.bff-app.me/">BFF. Be Fit and Functional</a>
-  <a class="back-link" href="https://www.bff-app.me/">&larr; Back to home</a>
-</header>
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/icon.png" class="nav-logo-icon" alt="BFF" />
+    <div>
+      <span class="nav-logo-name">BFF<span>.</span></span>
+      <span class="nav-logo-tagline">Be Fit and Functional</span>
+    </div>
+  </a>
+  <a href="/" class="nav-back">← Back to home</a>
+</nav>
 
-<main>
-  <span class="eyebrow">Legal</span>
+<div class="page-header">
+  <div class="page-eyebrow">Legal</div>
   <h1>Terms of Use</h1>
-  <div class="updated">Last updated: September 7, 2026</div>
+  <p>The terms that govern your use of BFF, on iOS and Android.</p>
+  <span class="updated-date">Last updated: September 7, 2026</span>
+</div>
 
-  <div class="note">
-    These terms apply to BFF - Be Fit and Functional on both iOS and Android. The general terms below apply to all users; the platform-specific sections apply depending on where you downloaded the App.
+<div class="content">
+
+  <div class="toc">
+    <p class="toc-title">Contents</p>
+    <ol>
+      <li><a href="#license">License Grant</a></li>
+      <li><a href="#data">Consent to Use of Data</a></li>
+      <li><a href="#ugc">User-Generated Content</a></li>
+      <li><a href="#warranty">No Warranty</a></li>
+      <li><a href="#platform-terms">Platform-Specific Terms</a></li>
+      <li><a href="#health">Health &amp; Product Claims</a></li>
+      <li><a href="#legal-compliance">Legal Compliance</a></li>
+      <li><a href="#third-party-services">Third-Party Terms of Agreement</a></li>
+      <li><a href="#contact">Contact Information</a></li>
+    </ol>
   </div>
 
-  <p class="lede">Apps made available through the Apple App Store and Google Play are licensed, not sold, to you. Your license to BFF - Be Fit and Functional (the "App") is subject to your prior acceptance of this Terms of Use agreement (this "Agreement"). Your license to the App under this Agreement is granted by BFF - Be Fit and Functional ("BFF", "we", "us", or "our"). We reserve all rights not expressly granted to you.</p>
+  <div class="highlight-box">
+    <p>Apps made available through the Apple App Store and Google Play are licensed, not sold, to you. Your license to BFF - Be Fit and Functional (the "App") is subject to your prior acceptance of this Terms of Use agreement (this "Agreement"), granted by BFF - Be Fit and Functional ("BFF", "we", "us", or "our"). We reserve all rights not expressly granted to you.</p>
+  </div>
 
-  <section id="license">
-    <div class="sec-num">1.</div>
+  <div class="policy-section" id="license">
+    <span class="section-number">01</span>
     <h2>License Grant</h2>
     <ul>
       <li>We grant you a limited, nontransferable, non-exclusive license to use the App on any mobile device that you own or control, solely for your personal, non-commercial use, and as permitted by the usage rules of the app marketplace through which you obtained the App.</li>
@@ -127,28 +160,30 @@
       <li>You may not copy (except as permitted by this license), decompile, reverse-engineer, disassemble, attempt to derive the source code of, modify, or create derivative works of the App, any updates, or any part of the App, except to the extent any such restriction is prohibited by applicable law.</li>
       <li>The terms of this Agreement will govern any content, materials, or services accessible from or purchased within the App, as well as any upgrades that replace or supplement the original App, unless a separate license accompanies the upgrade, in which case that license will govern.</li>
     </ul>
-  </section>
+  </div>
 
-  <section id="data">
-    <div class="sec-num">2.</div>
+  <div class="policy-section" id="data">
+    <span class="section-number">02</span>
     <h2>Consent to Use of Data</h2>
-    <p>You agree that BFF may collect and use technical data and related information, including but not limited to technical information about your device, system and application software, and peripherals, gathered periodically to facilitate software updates, product support, and other services related to the App. BFF may use this information, as long as it is in a form that does not personally identify you, to improve its products or to provide services or technologies to you. For details on how BFF collects, uses, and protects your personal data, please see our <a href="https://www.bff-app.me/privacy.html">Privacy Policy</a>.</p>
-  </section>
+    <p>You agree that BFF may collect and use technical data and related information, including but not limited to technical information about your device, system and application software, and peripherals, gathered periodically to facilitate software updates, product support, and other services related to the App. BFF may use this information, as long as it is in a form that does not personally identify you, to improve its products or to provide services or technologies to you.</p>
+    <p>For details on how BFF collects, uses, and protects your personal data, please see our <a href="/privacy.html">Privacy Policy</a>.</p>
+  </div>
 
-  <section id="ugc">
-    <div class="sec-num">3.</div>
+  <div class="policy-section" id="ugc">
+    <span class="section-number">03</span>
     <h2>User-Generated Content</h2>
     <p>The App may allow you to create, submit, post, or transmit content, messages, logs, and other materials ("User Content") to BFF, including conversations with your AI coach persona. You are solely responsible for your own User Content and the consequences of submitting it. You retain ownership of the User Content you create.</p>
-  </section>
+  </div>
 
-  <section id="warranty">
-    <div class="sec-num">4.</div>
+  <div class="policy-section" id="warranty">
+    <span class="section-number">04</span>
     <h2>No Warranty</h2>
-    <p class="caps">You expressly acknowledge and agree that use of the App is at your sole risk. To the maximum extent permitted by applicable law, the App is provided "as is" and "as available," with all faults and without warranty of any kind. BFF hereby disclaims all warranties and conditions with respect to the App, either express, implied, or statutory, including but not limited to the implied warranties and/or conditions of merchantability, of satisfactory quality, of fitness for a particular purpose, of accuracy, of quiet enjoyment, and of non-infringement of third-party rights. No oral or written information or advice given by BFF or its authorized representative shall create a warranty.</p>
-  </section>
+    <p>You expressly acknowledge and agree that use of the App is at your sole risk. To the maximum extent permitted by applicable law, the App is provided "as is" and "as available," with all faults and without warranty of any kind. BFF hereby disclaims all warranties and conditions with respect to the App, either express, implied, or statutory, including but not limited to the implied warranties and/or conditions of merchantability, of satisfactory quality, of fitness for a particular purpose, of accuracy, of quiet enjoyment, and of non-infringement of third-party rights.</p>
+    <p>No oral or written information or advice given by BFF or its authorized representative shall create a warranty.</p>
+  </div>
 
-  <section id="platform-terms">
-    <div class="sec-num">5.</div>
+  <div class="policy-section" id="platform-terms">
+    <span class="section-number">05</span>
     <h2>Platform-Specific Terms</h2>
     <p>Depending on where you downloaded the App, one of the following additional sections applies to you.</p>
 
@@ -161,7 +196,6 @@
         <li>In the event of any failure of the App to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price for the App to you, if any; to the maximum extent permitted by applicable law, Apple will have no other warranty obligation whatsoever with respect to the App, and any other claims, losses, liabilities, damages, costs, or expenses attributable to any failure to conform to any warranty will be the sole responsibility of BFF.</li>
         <li>BFF, not Apple, is responsible for addressing any claims by you or any third party relating to the App, including product liability claims, legal or regulatory compliance claims, and consumer protection claims, including in connection with the App's use of HealthKit and the Health app, where applicable.</li>
         <li>In the event of any third-party claim that the App infringes a third party's intellectual property rights, BFF, not Apple, is solely responsible for the investigation, defense, settlement, and discharge of any such claim.</li>
-        <li>You represent that you are not located in a country subject to a U.S. Government embargo or designated a "terrorist supporting" country, and that you are not on any U.S. Government list of prohibited or restricted parties.</li>
         <li>Apple and Apple's subsidiaries are third-party beneficiaries of this Agreement, and upon your acceptance of this Agreement, Apple will have the right to enforce this Agreement against you as a third-party beneficiary.</li>
       </ul>
     </div>
@@ -175,40 +209,56 @@
         <li>In the event of any failure of the App to conform to any applicable warranty, you may notify Google, and Google's sole obligation will be to refund the purchase price for the App to you, if any, in accordance with Google Play's refund policies; to the maximum extent permitted by applicable law, Google will have no other warranty obligation whatsoever with respect to the App, and any other claims, losses, liabilities, damages, costs, or expenses attributable to any failure to conform to any warranty will be the sole responsibility of BFF.</li>
         <li>BFF, not Google, is responsible for addressing any claims by you or any third party relating to the App, including product liability claims, legal or regulatory compliance claims, and consumer protection claims.</li>
         <li>In the event of any third-party claim that the App infringes a third party's intellectual property rights, BFF, not Google, is solely responsible for the investigation, defense, settlement, and discharge of any such claim.</li>
-        <li>Your use of the App via Google Play is also subject to the Google Play Terms of Service, available at <a href="https://play.google.com/intl/en_us/about/play-terms/" target="_blank" rel="noopener">play.google.com/about/play-terms</a>.</li>
-        <li>You represent that you are not located in a country subject to a U.S. Government embargo or designated a "terrorist supporting" country, and that you are not on any U.S. Government list of prohibited or restricted parties.</li>
+        <li>Your use of the App via Google Play is also subject to the Google Play Terms of Service, available at <a href="https://play.google.com/intl/en_us/about/play-terms/" target="_blank">play.google.com/about/play-terms</a>.</li>
       </ul>
     </div>
-  </section>
+  </div>
 
-  <section id="health">
-    <div class="sec-num">6.</div>
+  <div class="policy-section" id="health">
+    <span class="section-number">06</span>
     <h2>Health &amp; Product Claims</h2>
-    <p>BFF is a wellness accountability tool and does not provide medical advice, diagnosis, or treatment. Nothing in the App should be treated as a substitute for professional medical or health guidance. Always consult a qualified healthcare provider regarding any health or fitness decisions.</p>
-  </section>
+    <div class="highlight-box">
+      <p>BFF is a wellness accountability tool and does not provide medical advice, diagnosis, or treatment. Nothing in the App should be treated as a substitute for professional medical or health guidance. Always consult a qualified healthcare provider regarding any health or fitness decisions.</p>
+    </div>
+  </div>
 
-  <section id="contact">
-    <div class="sec-num">7.</div>
-    <h2>Contact Information</h2>
-    <p>Questions, complaints, or claims regarding the App should be directed to: <a href="mailto:support@bff-app.me">support@bff-app.me</a>.</p>
-  </section>
+  <div class="policy-section" id="legal-compliance">
+    <span class="section-number">07</span>
+    <h2>Legal Compliance</h2>
+    <p>You represent and warrant that (i) you are not located in a country that is subject to a U.S. Government embargo, or that has been designated by the U.S. Government as a "terrorist supporting" country; and (ii) you are not listed on any U.S. Government list of prohibited or restricted parties.</p>
+  </div>
 
-  <section id="third-party-services">
-    <div class="sec-num">8.</div>
+  <div class="policy-section" id="third-party-services">
+    <span class="section-number">08</span>
     <h2>Third-Party Terms of Agreement</h2>
     <p>You must comply with applicable third-party terms of agreement when using the App. For example, if the App uses your device's data connection, you must not be in breach of your wireless data service agreement when using the App.</p>
-  </section>
-</main>
+  </div>
+
+  <div class="policy-section" id="contact">
+    <span class="section-number">09</span>
+    <h2>Contact Information</h2>
+    <p>Questions, complaints, or claims regarding the App should be directed to us.</p>
+    <div class="contact-card">
+      <p class="contact-card-title">Get in touch</p>
+      <p>Email: <a href="mailto:support@bff-app.me">support@bff-app.me</a></p>
+      <p>Website: <a href="https://bff-app.me">bff-app.me</a></p>
+    </div>
+  </div>
+
+</div>
 
 <footer>
-  <a class="logo" href="https://www.bff-app.me/">BFF. Be Fit and Functional</a>
-  <div class="flinks">
-    <a href="https://www.bff-app.me/terms.html">Terms of Use</a>
-    <a href="https://www.bff-app.me/privacy.html">Privacy Policy</a>
-    <a href="https://www.bff-app.me/support.html">Support</a>
-    <a href="https://www.bff-app.me/delete-account.html">Delete Account</a>
-  </div>
-  <div class="copyright">&copy; 2026 BFF - Be Fit and Functional</div>
+  <a href="/" class="footer-logo">
+    <span class="footer-logo-name">BFF<span>.</span></span>
+    <span class="footer-logo-tagline">Be Fit and Functional</span>
+  </a>
+  <ul class="footer-links">
+    <li><a href="/terms.html">Terms of Use</a></li>
+    <li><a href="/privacy.html">Privacy Policy</a></li>
+    <li><a href="/support.html">Support</a></li>
+    <li><a href="/delete-account.html">Delete Account</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 BFF - Be Fit and Functional</p>
 </footer>
 
 </body>
